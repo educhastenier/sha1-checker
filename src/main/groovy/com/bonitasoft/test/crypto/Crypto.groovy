@@ -30,12 +30,12 @@ class Crypto {
                              "TaskPermissionRule.groovy"                      : "291162d21ef9a6ab9d7892b0dd00d2199fde44fe",
                              "UserPermissionRule.groovy"                      : "92d283255edced2a4e63313b8975b6cad1767cf8"]
 
-    boolean isGroovyScriptFileUnchanged(String scriptName, byte[] fileContent) {
+    boolean isGroovyScriptFileUnchanged(String scriptName, byte[] scriptContent) {
         String reference = checksumMap.get(scriptName)
 
         MessageDigest sha1Digest = MessageDigest.getInstance("SHA1")
-        byte[] sha1sum = sha1Digest.digest(new String(fileContent, StandardCharsets.UTF_8).replaceAll("$LINE_SEPARATOR", '\n').bytes)
-        StringBuffer sb = new StringBuffer()
+        byte[] sha1sum = sha1Digest.digest(new String(scriptContent, StandardCharsets.UTF_8).replaceAll("$LINE_SEPARATOR", '\n').bytes)
+        StringBuilder sb = new StringBuilder()
         for (int i = 0; i < sha1sum.length; i++) {
             sb.append(Integer.toString((sha1sum[i] & 0xff) + 0x100, 16).substring(1))
         }

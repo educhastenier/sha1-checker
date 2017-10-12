@@ -19,6 +19,6 @@ class CryptoTest {
         final boolean fileUnchanged = crypto.isGroovyScriptFileUnchanged("ActorMemberPermissionRule.groovy", referenceFileContent)
 
         // then:
-        assertThat(fileUnchanged).isTrue();
+        assertThat(fileUnchanged).isTrue()
     }
 }
