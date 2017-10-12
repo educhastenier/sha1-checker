@@ -34,6 +34,8 @@ class Crypto {
         String reference = checksumMap.get(scriptName)
 
         MessageDigest sha1Digest = MessageDigest.getInstance("SHA1")
+
+        // .replaceAll("$LINE_SEPARATOR", '\n') FIXES the incompatibility with Windows, yeah !!
         byte[] sha1sum = sha1Digest.digest(new String(scriptContent, StandardCharsets.UTF_8).replaceAll("$LINE_SEPARATOR", '\n').bytes)
         StringBuilder sb = new StringBuilder()
         for (int i = 0; i < sha1sum.length; i++) {

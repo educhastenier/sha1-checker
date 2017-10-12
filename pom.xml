@@ -42,7 +42,6 @@
                 <version>3.1</version>
                 <configuration>
                     <compilerId>groovy-eclipse-compiler</compilerId>
-                    <!--<verbose>true</verbose>-->
                 </configuration>
                 <dependencies>
                     <dependency>
