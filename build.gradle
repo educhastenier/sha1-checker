@@ -1,0 +1,25 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'groovy'
+
+group = 'com.bonitasoft.test'
+version = '1.0-SNAPSHOT'
+
+description = "Crypto alogrithm test project"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+        
+     maven { url "http://dev.rd.lan/userContent/m2_repo/" }
+     maven { url "http://repositories.rd.lan/maven/releases/" }
+     maven { url "https://maven.restlet.com" }
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+
+dependencies {
+    compile group: 'org.codehaus.groovy', name: 'groovy-all', version:'2.4.4'
+    testCompile group: 'junit', name: 'junit', version:'4.12'
+    testCompile group: 'org.assertj', name: 'assertj-core', version:'3.7.0'
+}
